@@ -4,8 +4,8 @@ public class App {
             run(i, 1000);
         }
 
-        System.out.println("STRESS TEST! 50D hyperplane with 500,000 datapoints!\n");
-        run(50, 500000);
+        System.out.println("STRESS TEST! 50D hyperplane with 100,000 datapoints!\n");
+        run(50, 100000);
     }
 
     public static void run(int dimensions, int numDatapoints) {
@@ -37,7 +37,6 @@ public class App {
         long startTime = System.currentTimeMillis();
         int stepsNeeded = Perceptron.train(hyperplane, datapoints);
         long endTime = System.currentTimeMillis();
-
         
         double normalizationRatio = hyperplane.w[0] / goalHyperplane.w[0];
         for (int i = 0; i < dimensions + 1; i++) {
